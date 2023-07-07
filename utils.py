@@ -138,10 +138,10 @@ def download_ufc_101_subset(zip_url, num_classes, splits, download_dir):
     print(split_name, ":")
     split_dir = download_dir / split_name
     split_files, files_for_class = split_class_lists(files_for_class, split_count)
-    # try:
-    #     download_from_zip(zip_url, split_dir, split_files)
-    # except:
-    #   print('Files already downloaded')
+    try:
+        download_from_zip(zip_url, split_dir, split_files)
+    except:
+      print('Files already downloaded')
     dirs[split_name] = split_dir
 
   return dirs
